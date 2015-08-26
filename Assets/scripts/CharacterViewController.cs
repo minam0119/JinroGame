@@ -12,7 +12,9 @@ public class CharacterViewController : MonoBehaviour {
 	public GameObject talkCameraObj;
 	string talkContent;
 
-	public void LoadTalk(string talks){
+	public void ShowTalk(string talks){
+		talkLabel = gameObject.transform.FindChild("CharacterCamera")
+			.FindChild("Canvas").FindChild("TalkWindow").FindChild("TalkLabel").GetComponent<Text>();
 		StartCoroutine(SetText(talkLabel,talks));
 	}
 
@@ -22,4 +24,5 @@ public class CharacterViewController : MonoBehaviour {
 			yield return new WaitForSeconds(0.04f);
 		}
 	}
+
 }
