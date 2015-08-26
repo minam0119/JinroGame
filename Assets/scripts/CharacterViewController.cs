@@ -9,8 +9,8 @@ public class CharacterViewController : MonoBehaviour {
 	public bool dead;
 	public int role,actRole;
 	public PlayerViewController player;
-	public Camera talkCamera;
-	string talkContent; 
+	public GameObject talkCameraObj;
+	string talkContent;
 
 	public void LoadTalk(string talks){
 		StartCoroutine(SetText(talkLabel,talks));
